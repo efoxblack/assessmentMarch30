@@ -1,10 +1,26 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double[] scores = {27.5, 77.3, 94.7, 100.0, 44.7, 67.8};
 
-        Student student1 = new Student("Mike", "Jones", scores);
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("What is your first and last name?");
+        String firstN = scan.nextLine();
+        String lastN = scan.nextLine();
+
+        System.out.println("How many grades do you have?");
+        int num = scan.nextInt();
+
+        System.out.println("Enter your grades: ");
+        double[] scores = new double[num];
+
+        for (int i = 0; i < scores.length; i++) {
+            scores[i] = scan.nextDouble();
+        }
+
+        Student student1 = new Student(firstN, lastN, scores);
 
         System.out.println(student1);
 
